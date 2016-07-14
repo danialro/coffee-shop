@@ -9,9 +9,18 @@ var coffeeShop = {
   },
 
   makeDrink: function (drinkType) {
-    // TODO: Finish this method
+
+    if ((coffeeShop["drinkRequirements"][drinkType]) && coffeeShop.beans > coffeeShop["drinkRequirements"][drinkType]) {
+                  alert("There you go!");
+      coffeeShop.beans -= coffeeShop["drinkRequirements"][drinkType];
+
+    } else if (coffeeShop.beans < coffeeShop["drinkRequirements"][drinkType]){
+        alert("Sorry, we're all out of beans!");
+        } else {
+                alert("Sorry, we don't make " + drinkType);
+      }
   }
-}
+};
 
 coffeeShop.makeDrink("latte");
 coffeeShop.makeDrink("americano");
